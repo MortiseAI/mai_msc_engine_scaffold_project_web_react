@@ -1,2 +1,15 @@
-# mai_msc_engine_scaffold_project_web_react
-Mortise Spec Coding Engine | Web React 脚手架工程
+# 🧩 Mortise Spec Code Engine | Web React 脚手架工程
+
+该工程是基于 Mortise Spec Code Engine 的 Web React 脚手架项目，用于快速创建、验证和调试 MortiseAI 组件（MCube）、模块（Module)、项目（Project）。
+它提供了标准化的目录结构、依赖配置与构建环境，用于高效地进行组件开发与测试。
+
+# 🧩 版本说明
+
+标签 : 🎉 新功能 🧱 优化结构 ⚙️ 构建/环境 🐞 修复问题 🚀 性能/架构升级
+
+🔗 [Mortise Spec Code Engine | Mortise 规格编码引擎](https://github.com/MortiseAI/mai_msc_engine_ts_module)
+
+>🎊 Tag v0.0.1 · 初始化版本
+>*   📅 2025-11-10
+>* 🎉 首个版本发布，建立脚手架工程
+>* 📦 依赖 "@mortiseai/mai_msc_engine_ts_module": "^0.0.1"
