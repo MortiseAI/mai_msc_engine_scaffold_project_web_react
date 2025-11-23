@@ -5,7 +5,7 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 module.exports = {
 
     entry: {
-        main: './src/project/mai-main/mai-main-page',
+        "main": './src/project/mai-main/mai-main-page',
     },
 
     module: {
