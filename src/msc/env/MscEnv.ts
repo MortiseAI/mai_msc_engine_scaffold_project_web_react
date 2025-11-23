@@ -14,7 +14,7 @@ import {MaiMainLogicActionKeys} from "../../project/mai-main/logic/mai-main-logi
 import {MaiMainLogicStateKeys} from "../../project/mai-main/logic/mai-main-logic/state/MaiMainLogicStateKeys";
 import {MaiMainWorkflow} from "../../project/mai-main/workflow/MaiMainWorkflow";
 
-export class MscEvn implements IMscEnv {
+export class MscEnv implements IMscEnv {
 
     private _dsl: any = {
         mai_main_dsl,

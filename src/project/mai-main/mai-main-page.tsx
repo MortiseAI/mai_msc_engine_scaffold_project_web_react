@@ -19,7 +19,7 @@ function MaiMainPage(props: any) {
             console.log("MaiMainPage", `LifecycleEvent >>> ${JSON.stringify(event)}`)
         },
         onErrorEvent(event: MscErrorEvent): void {
-            console.log("MaiMainPage", `MscErrorEvent >>> ${JSON.stringify(event)}`)
+            console.log("MaiMainPage", `ErrorEvent >>> ${JSON.stringify(event)}`)
         }
     }
 

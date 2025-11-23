@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {MscActionEvent, MscBuilder, MscInstance, MscLifecycleEvent, MscStateEvent, MscProvider, MscErrorEvent} from "@mortiseai/mai_msc_engine_ts_module";
-import {MscEvn} from "../env/MscEvn";
+import {MscEnv} from "../env/MscEnv";
 
 /**
  * MSC React 通用容器
@@ -28,7 +28,7 @@ export function MscReactContainer(props: any) {
             }
         }
         if (!MscProvider.isRegistryMscEnv()) {
-            MscProvider.registryMscEnv(new MscEvn())
+            MscProvider.registryMscEnv(new MscEnv())
         }
 
         if (props.debug) {
