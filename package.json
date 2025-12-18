@@ -1,6 +1,6 @@
 {
   "name": "mai_msc_engine_scaffold_project_web_react",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Mortise Spec Code Engine | Web React Scaffold Project",
   "main": "index.js",
   "scripts": {
