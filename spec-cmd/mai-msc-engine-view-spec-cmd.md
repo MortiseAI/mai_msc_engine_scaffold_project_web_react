@@ -1,6 +1,6 @@
 # View 组件检查
 
-按照 [mai-msc-engine-spec-doc.md](mai-msc-engine-spec-doc.md) 校验 View 视图组件结构并进行修复
+按照 [mai-msc-engine-spec-cmd.md](./spec-doc/mai-msc-engine-spec-doc.md) 校验 View 视图组件结构并进行修复
 
 * 遍历每一个模块的 View 组件（./src/project/{模块目录}/view/{View 组件}
 * 检查 View 组件语法是否符合 MSC Engine 规范
