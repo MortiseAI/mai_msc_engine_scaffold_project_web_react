@@ -22,10 +22,6 @@
 >*   📅 2025-12-18
 >* 🧱 完善 Spec 指令
 
->🎊 Tag v0.0.4 · Spec 指令优化
->*   📅 2026-01-08
->* 🧱 更新 Spec 指令
-
 # 🧩 Spec 操作指南（Spec Operation Guide）
 
 在 MortiseAI 自动生成项目后，由于不同模型的能力差异，代码中可能出现“幻觉”问题导致的细节缺失或错误的。
@@ -34,63 +30,62 @@
 
 实践表明，这些 Spec 指令能够覆盖并修正约 **99% 的代码细节问题**，是确保工程质量的重要步骤。
 
-项目首次创建，建议使用 [MSC 工程检查指令](spec-cmd/MSC 工程检查指令.md) 进行初始化检测与修复
+项目首次创建，建议使用 [Spec 项目检查清单指令](spec-cmd/mai-msc-engine-project-check-spec-cmd.md) 进行初始化检测与修复
 
-	导入 [MSC 工程检查指令.md] 到上下文窗口，执行 Spec 指令
+	1. 导入 mai-msc-engine-project-check-spec-cmd 到上下文窗口
+	2. 执行 Spec 指令 ：根据 Spec 项目检查指令对项目进行检查和修复
 
 ---
 
 # 📘 Spec 指令总览（Overview）
 
-| 操作类型                        | 说明                                   | 主要解决问题             | 文档路径                                                                                                                                                      |
-|-----------------------------|--------------------------------------|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **MSC 工程配置检查**              | 检查 Project 代码结构/依赖/命名/组织             | 结构缺陷、工程不一致         | ./spec-cmd/MSC 工程配置检查指令.md                                                                                                                                |
-| **Workflow 工作流检查**          | 检查 Workflow 事件流与 Action/State 关联关系   | 工作流语法错误与关联关系错误     | ./spec-cmd/MCube Workflow 工作流检查指令.md                          		                                                                                          |
-| **DSL 配置检查**                | 检查 DSL 配置的字段、结构与约束                   | DSL 不规范、字段缺失       	| ./spec-cmd/MCube DSL 配置检查指令.md                              	                                                                                             |
-| **View 组件检查**               | 检查 View 视图组件结构                     	 | View 组件结构错误        		| ./spec-cmd/MCube View 组件检查指令.md                          		                                                                                               |
-| **Logic 组件检查**              | 检查验 Logic 逻辑组件结构                     | Logic 组件结构错误       	| ./spec-cmdc/MCube Logic 组件检查指令.md                              	  	                                                                                       |
-| **组件需求检查**                  | 检查 View/Logic 组件需求实现程度               | View/Logic 组件需求完整度 | ./spec-cmdc/MCube View 组件需求完整度检查指令.md <br/>MCube Logic 组件需求完整度检查指令.md <br/>./src/project/.../组件目录/mai-msc-engine-mcube-spec-doc.md                      	 |
-| **样式与结构检查**                 | 检查 View 组件 LESS 与 TSX 基础语法与匹配        | 样式错误、引用问题          | ./src/project/.../组件目录/less/xxx.less <br/>./src/project/.../组件目录/xxx.tsx                                                                                  |
-| **生成/更新 View 组件 Spec Doc**  | 基于 View 组件代码生成/更新 Spec Doc 文档        | 逆向生成/更新文档          | ./spec-cmd/生成 MCube View 组件 Spec 文档指令                               		                                                                                    |
-| **生成/更新 Logic 组件 Spec Doc** | 基于 Logic 组件代码生成/更新 Spec Doc 文档          | 逆向生成/更新文档            | ./spec-cmd/生成 MCube Logic 组件 Spec 文档指令              		    	                                                                                               |
-| **错误日志检查**                  | 检查运行日志并定位错误                          | 启动异常、运行错误          | ./mai-msc-engine-log.txt                                                 		 	                                                                             |
+| 操作类型             | 说明                                | 主要解决问题         | 文档路径                                                                  |
+|--------------------|------------------------------------|--------------------|--------------------------------------------------------------------------|
+| **Project 工程检查**    | 检查 Project 代码结构/依赖/命名/组织          | 结构缺陷、工程不一致       | ./spec-cmd/mai-msc-engine-project-check-spec-cmd.md                             |
+| **Workflow 工作流检查** | 检查 Workflow 事件流与 Action/State 关联关系 | 工作流语法错误与关联关系错误 | ./spec-cmd/mai-msc-engine-workflow-spec-cmd.md                           		  |
+| **DSL 配置检查**        | 检查 DSL 配置的字段、结构与约束               | DSL 不规范、字段缺失       | ./spec-cmd/mai-msc-engine-dsl-spec-cmd.md                                	    |
+| **View 组件检查**       | 检查 View 视图组件结构                     	| View 组件结构错误         | ./spec-cmd/mai-msc-engine-view-spec-cmd.md                               		  |
+| **Logic 组件检查**      | 检查验 Logic 逻辑组件结构                    | Logic 组件结构错误        | ./spec-cmdc/mai-msc-engine-logic-spec-cmd.md                              	  |
+| **组件需求检查**         | 检查 View/Logic 组件需求实现程度             | View/Logic 组件需求完整度 | ./src/project/.../组件目录/mai-msc-engine-mcube-spec-doc.md                      |
+| **样式与结构检查**       | 检查 View 组件 LESS 与 TSX 基础语法与匹配     | 样式错误、引用问题         | ./src/project/.../组件目录/less/xxx.less <br/>./src/project/.../组件目录/xxx.tsx  |
+| **错误日志检查**         | 检查运行日志并定位错误                       | 启动异常、运行错误         | ./mai-msc-engine-log.txt                                                 		 |
 
 ---
 
 # 1. 通用 Spec 指令（Project-Level Spec Checks）
 
-## 1.1 MSC 工程配置检查
+## 1.1 Project 工程检查
 
-	1. 导入 [MSC 工程配置检查指令.md] 到上下文窗口
-	2. 执行确认
+	1. 导入 mai-msc-engine-project-check-spec-cmd 到上下文窗口
+	2. 执行 Spec 指令 ：根据 Spec 项目检查指令对项目进行检查和修复
 
 ---
 
 ## 1.2 Workflow 工作流检查
 
-	1. 导入 [MCube Workflow 工作流检查指令.md] 到上下文窗口
-	2. 执行确认
+	1. 导入 mai-msc-engine-workflow-spec-cmd 到上下文窗口
+	2. 执行 Spec 指令 ：根据工作流 Spec 指令，对项目 Workflow 进行检查与修改
 
 ---
 
 ## 1.3 DSL 配置检查
 
-	1. 导入 [MCube DSL 配置检查指令.md] 到上下文窗口
-	2. 执行确认
+	1. 导入 mai-msc-engine-dsl-spec-cmd 到上下文窗口
+	2. 执行 Spec 指令 ：根据 DSL 配置 Spec 指令，对项目 DSL 配置进行检查与修改
 
 ---
 
 ## 1.4 View 组件检查
 
-	1. 导入 [MCube View 组件检查指令.md] 到上下文窗口
-	2. 执行确认
+	1. 导入 mai-msc-engine-view-spec-cmd 到上下文窗口
+	2. 执行 Spec 指令 ：根据视图组件 Spec 指令，对项目 View 组件进行检查与修改
 
 ---
 
 ## 1.5 Logic 组件检查
 
-	1. 导入 [MCube Logic 组件检查指令.md]到上下文窗口
-	2. 执行确认
+	1. 导入 mai-msc-engine-logic-spec-cmd 到上下文窗口
+	2. 执行 Spec 指令 ：根据逻辑组件 Spec 指令，对项目 Logic 组件进行检查与修改
 
 ---
 
@@ -104,10 +99,9 @@
 
 用于检查组件是否完整实现需求。
 
-	1. 导入 [MCube View 组件需求完整度检查指令.md / MCube Logic 组件需求完整度检查指令.md] 到上下文窗口
-    2. 导入 [mai-msc-engine-mcube-spec-doc.md] 到上下文窗口
+	1. 导入 mai-msc-engine-mcube-spec-doc.md 到上下文窗口
 	2. 导入核心组件文件（如 MaiMainBoxBrick.tsx / MaiMainLogic.ts）到上下文窗口
-	3. 执行确认
+	3. 执行 Spec 指令 ：根据组件 Spec 文档，对组件进行需求一致性检查
 
 ---
 
@@ -126,41 +120,20 @@
 
 ---
 
-## 2.3 生成/更新 View 组件 Spec Doc
-
-基于 Code 生成 Doc 。
-
-	1. 导入 [生成 MCube View 组件 Spec 文档指令.md] 到上下文窗口
-	2. 导入核心组件文件（如 MaiMainBoxBrick.tsx）到上下文窗口
-	3. 执行确认
-
----
-
-## 2.4 生成/更新 Logic 组件 Spec Doc
-
-基于 Code 生成 Doc 
-
-	1. 导入 [生成 MCube Logic 组件 Spec 文档指令.md] 到上下文窗口
-	2. 导入核心组件文件（如 MaiMainLogic.ts）到上下文窗口
-	3. 执行确认
-
----
-
 # 3. 日志检查（Runtime Log Check）
 
-项目启动后，日志记录在：mai-msc-engine-log.txt ，可用于快速定位运行异常。
+项目启动后，日志记录在： mai-msc-engine-log.txt ，可用于快速定位运行异常。
 
     1. 导入 mai-msc-engine-log.txt 到上下文窗口
     2. 执行 Spec 指令 ：检查日志内容并修复其中的错误
 
 ---
 
-
 # 📌 最佳实践流程（Recommended Workflow）
 
 | 步骤        | 操作内容  | 目的       |
 |------------|----------|-----------|
-| **Step 1** | 项目首次创建，执行 MSC 工程检查指令 | 可解决修复全局 99% 问题  |
+| **Step 1** | 项目首次创建，执行 Spec 项目检查清单指令 | 可解决修复全局 99% 问题  |
 | **Step 2** | 执行组件 Spec 指令    | 确保组件实现正确，避免 UI 语法与引用错误 |
 | **Step 3** | 执行日志检查 Spec 指令      | 修复启动与运行异常 |
 | **Step 4** | 按需重新生成与微调 | 进入正常开发周期  |
