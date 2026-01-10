@@ -36,24 +36,24 @@
 
 项目首次创建，建议使用 [MSC 工程检查指令](spec-cmd/MSC 工程检查指令.md) 进行初始化检测与修复
 
-	导入 [MSC 工程检查指令.md] 到上下文窗口，执行 Spec 指令
+	导入 [MSC 工程检查指令.md] 到上下文窗口，执行确认
 
 ---
 
 # 📘 Spec 指令总览（Overview）
 
-| 操作类型                        | 说明                                   | 主要解决问题             | 文档路径                                                                                                                                                      |
-|-----------------------------|--------------------------------------|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **MSC 工程配置检查**              | 检查 Project 代码结构/依赖/命名/组织             | 结构缺陷、工程不一致         | ./spec-cmd/MSC 工程配置检查指令.md                                                                                                                                |
-| **Workflow 工作流检查**          | 检查 Workflow 事件流与 Action/State 关联关系   | 工作流语法错误与关联关系错误     | ./spec-cmd/MCube Workflow 工作流检查指令.md                          		                                                                                          |
-| **DSL 配置检查**                | 检查 DSL 配置的字段、结构与约束                   | DSL 不规范、字段缺失       	| ./spec-cmd/MCube DSL 配置检查指令.md                              	                                                                                             |
-| **View 组件检查**               | 检查 View 视图组件结构                     	 | View 组件结构错误        		| ./spec-cmd/MCube View 组件检查指令.md                          		                                                                                               |
-| **Logic 组件检查**              | 检查验 Logic 逻辑组件结构                     | Logic 组件结构错误       	| ./spec-cmdc/MCube Logic 组件检查指令.md                              	  	                                                                                       |
-| **组件需求检查**                  | 检查 View/Logic 组件需求实现程度               | View/Logic 组件需求完整度 | ./spec-cmdc/MCube View 组件需求完整度检查指令.md <br/>MCube Logic 组件需求完整度检查指令.md <br/>./src/project/.../组件目录/mai-msc-engine-mcube-spec-doc.md                      	 |
-| **样式与结构检查**                 | 检查 View 组件 LESS 与 TSX 基础语法与匹配        | 样式错误、引用问题          | ./src/project/.../组件目录/less/xxx.less <br/>./src/project/.../组件目录/xxx.tsx                                                                                  |
-| **生成/更新 View 组件 Spec Doc**  | 基于 View 组件代码生成/更新 Spec Doc 文档        | 逆向生成/更新文档          | ./spec-cmd/生成 MCube View 组件 Spec 文档指令                               		                                                                                    |
-| **生成/更新 Logic 组件 Spec Doc** | 基于 Logic 组件代码生成/更新 Spec Doc 文档          | 逆向生成/更新文档            | ./spec-cmd/生成 MCube Logic 组件 Spec 文档指令              		    	                                                                                               |
-| **错误日志检查**                  | 检查运行日志并定位错误                          | 启动异常、运行错误          | ./mai-msc-engine-log.txt                                                 		 	                                                                             |
+| 操作类型                        | 说明                                   | 主要解决问题             | 文档路径                                                                                                                                                                |
+|-----------------------------|--------------------------------------|--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **MSC 工程配置检查**              | 检查 Project 代码结构/依赖/命名/组织             | 结构缺陷、工程不一致         | ./spec-cmd/MSC 工程配置检查指令.md                                                                                                                                          |
+| **Workflow 工作流检查**          | 检查 Workflow 事件流与 Action/State 关联关系   | 工作流语法错误与关联关系错误     | ./spec-cmd/MCube Workflow 工作流检查指令.md                          		                                                                                                    |
+| **DSL 配置检查**                | 检查 DSL 配置的字段、结构与约束                   | DSL 不规范、字段缺失       	| ./spec-cmd/MCube DSL 配置检查指令.md                              	                                                                                                       |
+| **View 组件检查**               | 检查 View 视图组件结构                     	 | View 组件结构错误        		| ./spec-cmd/MCube View 组件检查指令.md                          		                                                                                                         |
+| **Logic 组件检查**              | 检查验 Logic 逻辑组件结构                     | Logic 组件结构错误       	| ./spec-cmd/MCube Logic 组件检查指令.md                              	  	                                                                                                  |
+| **组件需求检查**                  | 检查 View/Logic 组件需求实现程度               | View/Logic 组件需求完整度 | ./spec-cmd/MCube View 组件需求完整度检查指令.md <br/>./spec-cmd/MCube Logic 组件需求完整度检查指令.md <br/>./src/project/.../组件目录/mai-msc-engine-mcube-spec-doc.md                      	 |
+| **样式与结构检查**                 | 检查 View 组件 LESS 与 TSX 基础语法与匹配        | 样式错误、引用问题          | ./src/project/.../组件目录/less/xxx.less <br/>./src/project/.../组件目录/xxx.tsx                                                                                            |
+| **生成/更新 View 组件 Spec Doc**  | 基于 View 组件代码生成/更新 Spec Doc 文档        | 逆向生成/更新文档          | ./spec-cmd/生成 MCube View 组件 Spec 文档指令                               		                                                                                              |
+| **生成/更新 Logic 组件 Spec Doc** | 基于 Logic 组件代码生成/更新 Spec Doc 文档          | 逆向生成/更新文档            | ./spec-cmd/生成 MCube Logic 组件 Spec 文档指令              		    	                                                                                                         |
+| **错误日志检查**                  | 检查运行日志并定位错误                          | 启动异常、运行错误          | ./mai-msc-engine-log.txt                                                 		 	                                                                                       |
 
 ---
 

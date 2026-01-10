@@ -41,7 +41,7 @@ SalesTrainingEvaluationLogic
 事件关联知识点
 1. @自定义 - 请求阿里云大模型生成考核标准
 ````
-API_KEY = sk-1133e1f7e58a4104a4ebf1bdff32ef97
+API_KEY = xxx-xxx-xxx
 
 1.请求体
 curl -X POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions \
@@ -131,7 +131,7 @@ curl -X POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions 
 事件关联知识点
 1. @自定义 - 请求阿里云大模型 [通义千问3-ASR-Flash]，进行语音识别
 ````
-API_KEY = sk-1133e1f7e58a4104a4ebf1bdff32ef97
+API_KEY = xxx-xxx-xxx
 
 **请求体**
 curl --location --request POST 'https://dashscope.aliyuncs.com/api/v1/services/aigc/multimodal-generation/generation' \
@@ -239,7 +239,7 @@ curl --location --request POST 'https://dashscope.aliyuncs.com/api/v1/services/a
 ````
 2. @自定义 - 请求阿里云大模型 [qwen-plus]，进行评分
 ````
-API_KEY = sk-1133e1f7e58a4104a4ebf1bdff32ef97
+API_KEY = xxx-xxx-xxx
 
 **请求体**
 curl -X POST https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions \
