@@ -13,7 +13,7 @@ Mortise.AI 逻辑组件规则
 # 2. 依赖与环境(NPM)
 
 ````
-import 三方依赖，不包括 @mortiseai/mai_msc_engine_ts_commonjs
+[组件 import 除了 @mortiseai/mai_msc_engine_ts_commonjs 和 React 的其他依赖 ，格式为 npm install 可安装依赖，多个依赖用英文逗号隔开]
 ````
 
 # 3. 功能与需求
@@ -21,11 +21,21 @@ import 三方依赖，不包括 @mortiseai/mai_msc_engine_ts_commonjs
 ## 3.1 功能需求说明
 **组件名称**
 ````
-xxxxxxLogic
+[逻辑组件类，继承 MscLogic 的逻辑组件主类]
+````
+**组件类型**
+````
+Logic
 ````
 **组件描述**
 ````
-对于组件的基本描述内容
+[对于组件的功能描述]
+````
+**组件关联知识点**
+[梳理出来的非事件关联的知识点，格式如下]
+1. @自定义 - [知识点简介]
+````
+具体知识点内容
 ````
 
 ---

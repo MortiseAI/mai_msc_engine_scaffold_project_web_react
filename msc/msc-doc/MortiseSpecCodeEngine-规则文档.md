@@ -309,22 +309,22 @@ MscProvider.registryMscDsl("mai_dsl_layout", [
             // View 组件类型为 “layer”（层布局）时，布局样式类型支持以下选项："flex"：FlexLayout 布局 ，"inline-block"：行内块布局（可并排排列，且可设置宽高），"none"：默认值，表示不设置特殊布局
             type: string,
             // FlexLayout 布局参数（type 为 "flex" 时启用）
-            flex?: {
-                "flex-direction"?: string,     // 主轴方向
-                "flex-wrap"?: string,          // 换行方式
-                "justify-content"?: string,    // 主轴对齐
-                "align-items"?: string,        // 交叉轴对齐
-                "align-content"?: string       // 多行对齐
+            flex: {
+                "flex-direction": string,     // 主轴方向
+                "flex-wrap": string,          // 换行方式
+                "justify-content": string,    // 主轴对齐
+                "align-items": string,        // 交叉轴对齐
+                "align-content": string       // 多行对齐
             },
             // Z 轴深度，决定视图堆叠顺序。默认与 soleId 相同。
-            zIndex?: number
+            zIndex: number
         },
         // Layer 层或 Virtual 虚拟布局下的子组件数组，按渲染顺序排列。每个子项为完整的 View 组件对象。
-        child?: Array<any>,
+        child: Array<any>,
         // View 组件初始化数据。可选。
-        data?: Map<string, any>,
+        data: Map<string, any>,
         // View 组件附加数据。可选。
-        ext?: Map<string, any>
+        ext: Map<string, any>
     },
     ...
 ])
@@ -376,7 +376,7 @@ MscProvider.registryMscDsl("mai_main_dsl_workflow", [
                 sender: string = "",
                 // 组件发送事件名，如 ["mai_dsl_brick_action_event"]
                 action: Array<string> | undefined   
-            }
+            },
             ...
         ]
     },
